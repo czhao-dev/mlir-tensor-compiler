@@ -18,6 +18,7 @@ This project is intentionally scoped as a learning compiler rather than a produc
 - [Running the Compiler](#running-the-compiler)
 - [Testing](#testing)
 - [Design Principles](#design-principles)
+- [References](#references)
 - [License](#license)
 
 ---
@@ -518,6 +519,34 @@ Native execution via `scripts/build_native_example.sh` was also verified for eve
 - Start with static shapes before supporting dynamic shapes.
 - Reuse standard MLIR dialects before inventing custom abstractions.
 - Document surprising lowering behavior with small examples.
+
+---
+
+## References
+
+### Papers
+
+- **MLIR: Scaling Compiler Infrastructure for Domain Specific Computation** — Chris Lattner et al., CGO 2021. The primary reference for MLIR's design: multi-level IR, progressive lowering, and the dialect abstraction. [PDF](https://research.google/pubs/mlir-scaling-compiler-infrastructure-for-domain-specific-computation/)
+
+- **Structured Code Generation: Towards Generative Compilation for Memory Hierarchies** — Nicolas Vasilache et al., 2022. Describes the philosophy behind the `linalg` dialect's structured op representation and why ops that carry their own iteration domain enable composable transformations (tiling, fusion, vectorization). [arXiv:2202.03293](https://arxiv.org/abs/2202.03293)
+
+- **MLIR: A Compiler Infrastructure for the End of Moore's Law** — Chris Lattner et al., 2020. Earlier preprint covering the motivation and architecture. [arXiv:2002.11054](https://arxiv.org/abs/2002.11054)
+
+### Official MLIR Documentation
+
+| Topic | Link |
+|---|---|
+| MLIR home | <https://mlir.llvm.org> |
+| Dialect overview | <https://mlir.llvm.org/docs/Dialects/> |
+| `linalg` dialect | <https://mlir.llvm.org/docs/Dialects/Linalg/> |
+| `vector` dialect | <https://mlir.llvm.org/docs/Dialects/Vector/> |
+| `transform` dialect | <https://mlir.llvm.org/docs/Dialects/Transform/> |
+| Bufferization guide | <https://mlir.llvm.org/docs/Bufferization/> |
+| One-Shot Bufferize | <https://mlir.llvm.org/docs/Passes/#-one-shot-bufferize> |
+| Defining dialects (ODS) | <https://mlir.llvm.org/docs/DefiningDialects/> |
+| Toy tutorial (end-to-end dialect walkthrough) | <https://mlir.llvm.org/docs/Tutorials/Toy/> |
+| `lit` testing tool | <https://llvm.org/docs/CommandGuide/lit.html> |
+| `FileCheck` reference | <https://llvm.org/docs/CommandGuide/FileCheck.html> |
 
 ---
 
